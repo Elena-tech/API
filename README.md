@@ -1,77 +1,86 @@
+Sure, let's update your README file with a more comprehensive guide that incorporates the advancements and clarifications we've discussed. Here's the updated content:
+
+---
+
+# Pexels Image Search Application
+
+This project provides a simple interface for searching and displaying images using the Pexels API. It leverages Flask for the web interface, allowing users to input search queries and view results directly on the webpage.
+
 ## Installation
 
-Before you begin, it's recommended to create a new virtual environment for this project. This helps keep dependencies required by different projects separate by creating isolated environments for them.
+Before you begin, it's recommended to create a new virtual environment for this project to manage dependencies effectively.
 
-1. **Create a Virtual Environment:**
-   
-   - **For Windows**, open Command Prompt and run:
-     ```bash
-     python -m venv venv
-     ```
-   
-   - **For macOS/Linux**, open Terminal and run:
-     ```bash
-     python3 -m venv venv
-     ```
-   This command creates a new virtual environment named `venv` in your project directory. Feel free to replace `venv` with a different name if desired.
+### Create a Virtual Environment:
 
-2. **Activate the Virtual Environment:**
-   
-   - **On Windows**, execute:
-     ```bash
-     .\venv\Scripts\activate
-     ```
-   
-   - **On macOS/Linux**, use:
-     ```bash
-     source venv/bin/activate
-     ```
-   Once activated, your shell prompt will include the name of the virtual environment, indicating all Python and pip commands are isolated to this environment.
+- **For Windows**:
+  Open Command Prompt and run:
+  ```bash
+  python -m venv venv
+  ```
 
-3. **Clone the Repository:**
+- **For macOS/Linux**:
+  Open Terminal and run:
+  ```bash
+  python3 -m venv venv
+  ```
+  This creates a new virtual environment named `venv`. You can choose a different name if preferred.
 
-   Replace `your-repository-url` with the actual URL of your project repository:
-   ```bash
-   git clone https://your-repository-url.git
-   cd your-project-directory
-   ```
-   Change `your-project-directory` to the name of the folder where your project is located.
+### Activate the Virtual Environment:
 
-4. **Install Required Packages:**
-   
-   Within the activated virtual environment, install the project dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- **On Windows**:
+  ```bash
+  .\venv\Scripts\activate
+  ```
+
+- **On macOS/Linux**:
+  ```bash
+  source venv/bin/activate
+  ```
+
+### Clone the Repository:
+
+Replace `your-repository-url` with the URL of your project repository:
+```bash
+git clone https://your-repository-url.git
+cd your-project-directory
+```
+Ensure `your-project-directory` is the folder containing your project.
+
+### Install Required Packages:
+
+Within the activated virtual environment, install dependencies via:
+```bash
+pip install -r requirements.txt
+```
 
 ## Requirements
 
-This project requires the following Python libraries:
+This project requires Python 3.x and the following libraries:
 
-- `python-dotenv`: For loading environment variables.
-- `requests`: To make HTTP requests.
-- `pexels_api`: A wrapper for the Pexels API.
-
-Ensure Python 3.x is installed on your machine to successfully run the project.
+- `Flask`: For creating the web application.
+- `python-dotenv`: To manage environment variables.
+- `requests`: For making HTTP requests to the Pexels API.
+- `pexels-api`: An optional wrapper for the Pexels API, not used directly in this project due to customization needs.
 
 ## Usage
 
-To start the application, execute the following command from the root directory of the project:
+Start the application with:
 ```bash
-python main.py
+python app.py
 ```
 
-This script initializes the application, fetching images based on the specified search query within `main.py`. By default, the application searches for "cats". Adjust the search query in the `search_api` parameter of `main.py` to explore different content.
+This command launches a Flask server, making the application accessible at `http://127.0.0.1:5000/` by default. Users can search for images via the web interface, with search results dynamically rendered on the same page.
 
 ## Project Structure
 
-- `main.py`: The main Python script that executes the application logic.
-- `api/connector.py`: Contains the `pexel` class for interacting with the Pexels API.
-- `requirements.txt`: Lists all the necessary Python packages.
+- `app.py`: Flask application setup, including routes for handling search requests.
+- `templates/`: Folder containing HTML templates for the search page and results display.
+- `api/connector.py`: Module for interfacing with the Pexels API, customized for specific project needs.
+- `requirements.txt`: Lists the Python packages necessary for the project.
 
 ### Interacting with the Application
 
-Once the application is running, it will print out details for each fetched image, including the photographer's name, photo URL, and the URL for the original image size.
+The web interface allows users to input search terms and select filters for image orientation, color, and size. The search results, including image previews and photographer credits, are displayed directly below the search form.
 
 ## Contributing
 
