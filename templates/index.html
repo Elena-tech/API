@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Search</title>
+</head>
+<body>
+    <h2>Search For:</h2>
+    <form action="/" method="post">
+        <input type="text" name="search" placeholder="Search keyword...">
+        <br>
+        <input type="radio" id="type" name="type" value="image" checked/> Images    
+        <br>
+        <input type="radio" id="type" name="type" value="video"/> Videos  
+        <br>
+<!--    
+        <select name="color">
+            <option value="">Any color</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        
+        <select name="orientation">
+            <option value="">Any orientation</option>
+            <option value="landscape">Landscape</option>
+            <option value="portrait">Portrait</option>
+            <option value="square">Square</option>
+        </select>
+    -->        
+        <button type="submit">Search</button>
+    </form>  
+    {% if results %}
+        <h2>Search Results</h2>
+        <div id="results">
+            {% if type == "image" %}
+                {% for photo in results %}
+                    <div class="photo">
+                        <img src="{{ photo.src }}" alt="Photo by {{ photo.photographer }}" width="500px">
+                        <p>Photographer: {{ photo.photographer }}</p>
+                        <p><a href="{{ photo.url }}">View on Pexels</a></p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for video in results %}
+                    <div class="photo">
+                        <img src="{{ video.image }}" alt="video by pexel" width="500px">
+                        <p><a href="{{ video.src }}" target="blank">PLAY VIDEO</a></p>
+                        <p><a href="{{ video.url }}">View on Pexels</a></p>
+                    </div>
+                {% endfor %}    
+            {% endif %}         
+        </div>
+    {% else %}
+        <p>Enter a search term to find images or videos.</p>
+    {% endif %}  
+</body>
+</html>

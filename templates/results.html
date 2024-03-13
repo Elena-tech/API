@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<style>
+    img {
+        max-width: 100%; /* makes sure the image is not wider than its container */
+        height: auto; /* maintains the aspect ratio */
+        display: block; /* prevents images from being inline */
+        margin: 0 auto; /* centers image in the container */
+    }
+    .photo-container {
+        width: 300px; /* or whatever size you want */
+        margin: 20px; /* adds some space around the images */
+        border: 1px solid #ccc; /* optional: adds a border around the images */
+        padding: 10px; /* optional: adds some padding inside the border */
+    }
+</style>
+<body>
+    {% for photo in photos %}
+    <div>
+      <img src="{{ photo.src }}" alt="Photo by {{ photo.photographer }}">
+      <p>Photographer: {{ photo.photographer }}</p>
+      <p><a href="{{ photo.url }}">View on Pexels</a></p>
+    </div>
+  {% endfor %}
+</body>
+</html>

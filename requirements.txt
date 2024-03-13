@@ -1,0 +1,4 @@
+python-dotenv
+requests
+pexels_api
+Flask==2.0.1
