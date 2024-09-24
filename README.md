@@ -1,7 +1,3 @@
-Sure, let's update your README file with a more comprehensive guide that incorporates the advancements and clarifications we've discussed. Here's the updated content:
-
----
-
 # Pexels Image Search Application
 
 This project provides a simple interface for searching and displaying images using the Pexels API. It leverages Flask for the web interface, allowing users to input search queries and view results directly on the webpage.
